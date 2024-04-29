@@ -1,0 +1,74 @@
+{
+  "name": "create-vite-starter",
+  "version": "0.0.1",
+  "packageManager": "pnpm@9.0.6",
+  "description": "vite starter template",
+  "author": "LiTENGTENG",
+  "license": "MIT",
+  "keywords": [],
+  "homepage": "https://github.com/ltteng/create-vite-starter#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ltteng/create-vite-starter.git"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "bin": {
+    "create-vite-starter": "dist/index.mjs"
+  },
+  "scripts": {
+    "dev": "unbuild --stub",
+    "build": "unbuild",
+    "lint": "eslint . --fix --ignore-path .gitignore",
+    "type-check": "tsc --noEmit",
+    "test": "vitest",
+    "release": "bumpp && npm publish",
+    "prepare": "simple-git-hooks"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.3.0",
+    "@commitlint/config-conventional": "^19.2.2",
+    "@cspell/eslint-plugin": "^8.7.0",
+    "@types/node": "^20.12.7",
+    "@typescript-eslint/eslint-plugin": "^7.7.1",
+    "@typescript-eslint/parser": "^7.7.1",
+    "bumpp": "^9.4.0",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "esno": "^4.7.0",
+    "lint-staged": "^15.2.2",
+    "prettier": "^3.2.5",
+    "simple-git-hooks": "^2.11.1",
+    "typescript": "^5.4.5",
+    "unbuild": "^2.0.0",
+    "vite": "^5.2.10",
+    "vitest": "^1.5.2"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "simple-git-hooks": {
+    "commit-msg": "npx commitlint --edit $1",
+    "pre-commit": "npx lint-staged"
+  },
+  "lint-staged": {
+    "*": [
+      "bash -c 'npm run lint'",
+      "bash -c 'npm run type-check'"
+    ]
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "editor.linkedEditing": true,
+  "files.eol": "\n",
+  "files.associations": {
+    ".env.*": "env",
+    "*.css": "postcss"
+  },
+  "conventionalCommits.autoCommit": false,
+  "conventionalCommits.emojiFormat": "emoji",
+  "conventionalCommits.lineBreak": "/n",
+  "conventionalCommits.promptScopes": false,
+  "conventionalCommits.promptFooter": false,
+  "eslint.probe": ["typescript", "typescriptreact", "javascript", "javascriptreact", "html", "vue"],
+  "eslint.validate": [
+    "typescript",
+    "typescriptreact",
+    "javascript",
+    "javascriptreact",
+    "html",
+    "vue"
+  ],
+  "prettier.endOfLine": "lf",
+  "unocss.underline": false,
+  "template-string-converter.quoteType": "single",
+  "template-string-converter.autoRemoveTemplateString": true,
+  "template-string-converter.validLanguages": [
+    "svelte",
+    "typescript",
+    "javascript",
+    "typescriptreact",
+    "javascriptreact",
+    "vue"
+  ]
+}
